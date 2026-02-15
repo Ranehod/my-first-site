@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <tittle>My firs site</tittle>
-        <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
-           <div class="container">
+<head>
+    <meta charset="UTF-8">
+    <title>My first site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
 
-            <header class="header">
-                <h1 class="logo">MySite</h1>
+        <header class="header">
+            <h1 class="logo">MySite</h1>
+            <nav>
+                <ul class="nav">
+                    <li><a href="#about" class="active">Home</a></li>
+                    <li><a href="#features">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-                <nav>
-                    <ul class="nav">
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">About</li>
-                            <li><a href="#">Contact</li>
-                    </ul>
-                </nav>
-            </header>
-            <section>
-                <h2>Про мене</h2>
-                <p>Мене звати Денис.Я починаючий Web developer з Варшави.</p>
-                <p>Я створюю сучасні сайти на HTML i CSS.</p>
-            </section>
-            <button>Замовити сайт</button>
-            
-            <main>
-                <h2>Abuot me</h2>
-                <button class="btn">Contact me</button>
-                <p>This is my first step to freelance</p>
-            </main>
-            <section class="features">
-                <div class="festure">
-                    <h3>Fast</h3>
-                    <p>Clean and fast websites.</p>
-                </div> 
-                <div class="feature">
-                    <h3>Modern</h3>
-                    <p>Modern design for brands.</p>
-                </div>
-                <div class="feature">
-                    <h3>Responsive</h3>
-                    <p>Works on all device.</p>
-                </div>
-                </section>
-            <footer>
-                <p>® 2026</p>
-            </footer>
-           </div>
-            </body>
+        <section id="about">
+            <h2>Про мене</h2>
+            <p>Мене звати Денис. Я починаючий Web developer з Варшави.</p>
+            <p>Я створюю сучасні сайти на HTML i CSS.</p>
+        </section>
+
+        <a href="mailto:denisancin40@gmail.com?subject=Замовлення сайту" class="btn">Замовити сайт</a>
+
+        <main>
+            <h2>About me</h2>
+            <a href="#contact" class="btn">Contact me</a>
+            <p>This is my first step to freelance</p>
+        </main>
+
+        <section class="features" id="features">
+            <div class="feature">
+                <h3>Fast</h3>
+                <p>Clean and fast websites.</p>
+            </div>
+            <div class="feature">
+                <h3>Modern</h3>
+                <p>Modern design for brands.</p>
+            </div>
+            <div class="feature">
+                <h3>Responsive</h3>
+                <p>Works on all device.</p>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <p>® 2026</p>
+        </footer>
+
+    </div>
+</body>
 </html>
