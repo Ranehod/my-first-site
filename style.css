@@ -395,3 +395,31 @@ footer img:hover {
         font-size: 28px;
     }
 }
+
+.contact-form {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    margin: 40px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background: var(--bg-color);
+    color: var( --text-color);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-radius: var(--btn-bg);
+}
