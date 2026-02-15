@@ -64,6 +64,17 @@
             <a href="https://ranehod.github.io/my-first-site/" target="_blank" class="btn">Переглянути</a>
             </div>
         </section>
+        
+        <section class="e60-counter" id="e60-counter">
+            <h2>💰 Моя ціль: BMW E60</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill">0%</div>
+            </div>
+            <p id="amount-display">0zl</p>
+            <p>з 30 000zl</p>
+            <button id="add-money" class="btn">+100 zl</button>
+            <button id="reset-money" class="btn" style="background-color: #dc3545;">Скинути</button>
+        </section>
 
 
         <footer id="contact">
@@ -95,5 +106,46 @@
         }
     });
     </script>
+
+    <script>
+    let total = 0;
+    const goal = 30000;
+    const amountDisplay = document.getElementById('amount-display');
+    const progressFill = document.getElementById('progress-fill');
+    const addButton = document.getElementById('add-money');
+    const resetButton = document.getElementById('reset-money');
+
+    const savedTotal = localStorage.getItem('e60-total');
+    if (savedTotal) {
+        total = parseInt(savedTotal, 10);
+    }
+
+    function updateCounter() {
+        
+        amountDisplay.textContent = total + ' zł';
+        
+        let percent = (total / goal) * 100;
+        if (percent > 100) percent = 100;
+        if (percent < 0) percent = 0;
+        
+        progressFill.style.width = percent + '%';
+        progressFill.textContent = Math.round(percent) + '%';
+       
+        localStorage.setItem('e60-total', total);
+    }
+
+    addButton.addEventListener('click', function() {
+        total += 100;
+        if (total > goal) total = goal;
+        updateCounter();
+    });
+
+    resetButton.addEventListener('click', function() {
+        total = 0;
+        updateCounter();
+    });
+
+    updateCounter();
+</script>
 </body>
 </html>
