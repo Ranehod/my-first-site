@@ -166,23 +166,39 @@
 </script>
 
 <button id="scrollToTop" class="scroll-top" title="Нагору">↑</button>
-<script>
-    const scrollBtn = document.getElementById('scrollToTop');
 
+<script>
+
+    const scrollBtn = document.getElementById('scrollToTop');
+    
     window.addEventListener('scroll', () => {
-        if (window.scroll.Y > 400) {
+        if (window.scrollY > 400) {
             scrollBtn.classList.add('show');
         } else {
-            scrollBtn.classList.remove('show')
+            scrollBtn.classList.remove('show');
         }
     });
-
+    
     scrollBtn.addEventListener('click', () => {
-        widnow.scrollTo({
-            top:0,
+        window.scrollTo({
+            top: 0,
             behavior: 'smooth'
-        })
-    })
+        });
+    });
+
+    let visits = localStorage.getItem('visitCount');
+    if (visits === null) {
+        visits = 1;
+    } else {
+        visits = parseInt(visits) + 1;
+    }
+    localStorage.setItem('visitCount', visits);
+    const counterEl = document.getElementById('visit-counter');
+    if (counterEl) {
+        counterEl.textContent = visits;
+    }
 </script>
+</script>
+<p>👁️ Відвідувань: <span id="visit-counter">0</span></p>
 </body>
 </html>
