@@ -164,5 +164,25 @@
 
     updateCounter();
 </script>
+
+<button id="scrollToTop" class="scroll-top" title="Нагору">↑</button>
+<script>
+    const scrollBtn = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scroll.Y > 400) {
+            scrollBtn.classList.add('show');
+        } else {
+            scrollBtn.classList.remove('show')
+        }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+        widnow.scrollTo({
+            top:0,
+            behavior: 'smooth'
+        })
+    })
+</script>
 </body>
 </html>
